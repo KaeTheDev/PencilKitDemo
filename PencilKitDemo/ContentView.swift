@@ -6,11 +6,19 @@
 //
 
 import SwiftUI
+import PencilKit
 
 struct ContentView: View {
+    @State private var canvasView = PKCanvasView()
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+            Color(.gray)
+                .ignoresSafeArea(.all)
+            CanvasViewStruct(canvasView: $canvasView)
+            
+        }
     }
 }
 
